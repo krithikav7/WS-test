@@ -1,0 +1,21 @@
+# render.yaml — Render Blueprint for one-click deploy.
+# In Render: New + > Blueprint > connect this repo. Render reads this file,
+# provisions the service, and gives you a public https URL.
+services:
+  - type: web
+    name: writesonic-logdrain-test
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      # Render injects PORT automatically; server.js already reads it.
+      - key: WRITESONIC_INGEST_URL
+        value: https://ingestion.writesonic.com/api/v1/analytics/ingest
+      - key: DEBUG_FORWARD
+        value: "true"
+      # Marked sync:false so it is NOT stored in the repo — you paste the real
+      # key into the Render dashboard when prompted during the first deploy.
+      - key: WRITESONIC_API_KEY
+        sync: false
