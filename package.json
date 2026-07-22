@@ -1,0 +1,17 @@
+{
+  "name": "writesonic-logdrain-test",
+  "version": "1.0.0",
+  "description": "Test harness for Writesonic AI Bot Analytics via a custom log drain: an Express site that captures request metadata and forwards it to the Writesonic ingestion endpoint.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "traffic": "node test-traffic.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
