@@ -4,7 +4,7 @@
 // forwarding happens asynchronously and all errors are swallowed/logged.
 
 const INGEST_URL = "https://ingestion.writesonic.com/api/v1/analytics/ingest";
-const API_KEY = "1b2c38c9-8cf7-40ac-99fe-ec6d297e6287";
+const API_KEY = "9a6e3ebb-664f-4903-8d2e-0f7b1c55cd4b";
 const DEBUG = "true";
 
 // Pull the first IP out of an X-Forwarded-For chain ("client, proxy1, proxy2").
