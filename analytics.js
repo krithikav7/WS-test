@@ -3,11 +3,9 @@
 // to the custom log-drain endpoint. Designed to never throw into your request path:
 // forwarding happens asynchronously and all errors are swallowed/logged.
 
-const INGEST_URL =
-  process.env.WRITESONIC_INGEST_URL ||
-  "https://ingestion.writesonic.com/api/v1/analytics/ingest";
-const API_KEY = process.env.WRITESONIC_API_KEY || "";
-const DEBUG = String(process.env.DEBUG_FORWARD || "").toLowerCase() === "true";
+const INGEST_URL = "https://ingestion.writesonic.com/api/v1/analytics/ingest";
+const API_KEY = process.env.WRITESONIC_API_KEY || "1b2c38c9-8cf7-40ac-99fe-ec6d297e6287";
+const DEBUG = "true";
 
 // Pull the first IP out of an X-Forwarded-For chain ("client, proxy1, proxy2").
 function firstIp(xff) {
